@@ -3,14 +3,17 @@ import ReactDom from "react-dom/client";
 import App from "./App";
 import "./output.css";
 import { BrowserRouter } from "react-router-dom";
-import store from "./redux/store";
 import { Provider } from "react-redux";
+import store from "./app/store";
+import { NavbarProvider } from "./NavbarContext";
 
 ReactDom.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <App />
+        <NavbarProvider>
+          <App />
+        </NavbarProvider>
       </Provider>
     </BrowserRouter>
   </React.StrictMode>
