@@ -17,6 +17,8 @@ const NewCards = ({ searchQuery, count = 10, layout }) => {
   }
 
   if (error) {
+    console.error("Error fetching news data:", error);
+    console.log("Error details:", error.data); 
     return (
       <div className="h-screen w-full flex items-center justify-center flex-col text-red-500">
         <p className="text-xl mb-4">Failed to load news. Please try again later.</p>
@@ -24,6 +26,7 @@ const NewCards = ({ searchQuery, count = 10, layout }) => {
       </div>
     );
   }
+  
 
   if (!newsData?.articles?.length) {
     return (
