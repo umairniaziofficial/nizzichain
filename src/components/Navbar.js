@@ -34,15 +34,6 @@ const Navbar = () => {
               Cryptocurrencies
             </div>
           </Link>
-          <Link to="/exchanges" className="cursor-pointer">
-            <div
-              className={`py-1 px-4 ${
-                isActive("/exchanges") ? "bg-[#55fff5] text-zinc-900" : ""
-              }`}
-            >
-              Exchanges
-            </div>
-          </Link>
           <Link to="/news" className="cursor-pointer">
             <div
               className={`py-1 px-4 ${
@@ -50,6 +41,15 @@ const Navbar = () => {
               }`}
             >
               News
+            </div>
+          </Link>
+          <Link to="https://www.linkedin.com/in/nizzypedia/" className="cursor-pointer">
+            <div
+              className={`py-1 px-4 ${
+                isActive("/author") ? "bg-[#55fff5] text-zinc-900" : ""
+              }`}
+            >
+              Author
             </div>
           </Link>
         </div>

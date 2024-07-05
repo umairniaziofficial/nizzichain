@@ -1,15 +1,14 @@
 import React from 'react';
 import millify from 'millify';
+import { Link } from 'react-router-dom';
 
 const CoinCard = ({ top10Coins, handleCopyToClipboard, copied }) => {
   return (
     <div className="w-full grid max-md:grid-cols-1 grid-cols-2 gap-12">
       {/* Display top 10 coins */}
       {top10Coins.map((coin, index) => (
-        <div
-          key={coin.uuid}
-          className="py-6 px-3 rounded-md shadow-lg bg-zinc-800"
-        >
+        <Link to={`/coin/${coin.uuid}`} key={coin.uuid} className="block">
+        <div className="py-6 px-3 rounded-md shadow-lg bg-zinc-800 hover:bg-zinc-900 transition-colors">
           <div className="border-b border-zinc-800 mb-9 flex justify-between items-center">
             <div>
               <span>{index + 1}. </span>
@@ -63,7 +62,7 @@ const CoinCard = ({ top10Coins, handleCopyToClipboard, copied }) => {
             </div>
           </div>
         </div>
-      ))}
+        </Link>))}
     </div>
   );
 };
